@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formosa Black Tranças- Arte em Fios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/heroicons@2.1.3/dist/heroicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-brown': '#6f4f2c',
+                        'custom-orange': '#D98F29',
+                        'custom-light-bg': '#e5d9d0',
+                        'background': 'background',
+                        'primary': '#110904',
+                        'muted': '#fffaf4',
+                        'accent': 'oklch(.65 .16 60)',
+                    },
+                    fontFamily: {
+                        'serif-display': ['Georgia', 'Times New Roman', 'serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        :root {
+            --background: oklch(.97 .01 60);
+            --foreground: oklch(.15 .02 60);
+            --card: oklch(.97 .01 60);
+            --card-foreground: oklch(.15 .02 60);
+            --popover: oklch(.97 .01 60);
+            --popover-foreground: oklch(.15 .02 60);
+            --primary: #110904;
+            --primary-foreground: oklch(.97 .01 60);
+            --secondary: oklch(.88 .04 70);
+            --secondary-foreground: oklch(.15 .02 60);
+            --muted: oklch(.88 .04 70);
+            --muted-foreground: #5a5450;
+            --accent: oklch(.65 .16 60);
+            --accent-foreground: oklch(.15 .02 60);
+            --destructive: oklch(.577 .245 27.325);
+            --destructive-foreground: oklch(.577 .245 27.325);
+            --border: oklch(.92 .01 60);
+            --input: oklch(.92 .01 60);
+            --ring: oklch(.65 .16 60);
+            --chart-1: oklch(.65 .16 60);
+            --chart-2: oklch(.88 .04 70);
+            --chart-3: oklch(.45 .01 60);
+            --chart-4: oklch(.7 .12 50);
+            --chart-5: oklch(.6 .1 65);
+            --radius: .625rem;
+            --sidebar: oklch(.97 .01 60);
+            --sidebar-foreground: oklch(.15 .02 60);
+            --sidebar-primary: oklch(.15 .02 60);
+            --sidebar-primary-foreground: oklch(.97 .01 60);
+            --sidebar-accent: oklch(.65 .16 60);
+            --sidebar-accent-foreground: oklch(.15 .02 60);
+            --sidebar-border: oklch(.92 .01 60);
+            --sidebar-ring: oklch(.65 .16 60);
+        }
+
+        .capa {
+            background-image: linear-gradient(to bottom,
+                    #371b08,
+                    transparent),
+                url('src/img/LogoFormosa.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh !important;
+        }
+
+        @media(max-width:778px) {
+            .capa {
+                background-image: linear-gradient(to bottom,
+                        #371b08,
+                        transparent),
+                    url('src/img/CapaResponsive1.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 70vh !important;
+
+            }
+        }
+
+        @media(max-width:480px) {
+            .capa {
+                background-image: linear-gradient(to bottom,
+                        #371b08,
+                        transparent),
+                    url('src/img/CapaResponsive2.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 70vh !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-white text-foreground ">
+
+    <div class="capa relative pt-32 pb-16 md:pt-48 md:pb-24">
+        <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border z-50">
+            <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                        <span class="text-foreground font-bold text-sm">F</span>
+                    </div>
+                    <span class="font-serif text-xl font-semibold text-foreground hidden sm:inline">
+                        Formosa Black Tranças
+                    </span>
+                </div>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#services"
+                        class="text-sm text-muted-foreground hover:text-foreground transition">Serviços</a>
+                    <a href="#about" class="text-sm text-muted-foreground hover:text-foreground transition">Sobre</a>
+                    <a href="#gallery"
+                        class="text-sm text-muted-foreground hover:text-foreground transition">Galeria</a>
+
+                    <button
+                        class="px-6 py-2 bg-accent text-accent-foreground rounded-full text-sm font-medium hover:opacity-90 transition">
+                        Agendar
+                    </button>
+                </div>
+
+                <button id="mobile-menu-button" class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-menu text-foreground">
+                        <line x1="4" x2="20" y1="12" y2="12"></line>
+                        <line x1="4" x2="20" y1="6" y2="6"></line>
+                        <line x1="4" x2="20" y1="18" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+        </header>
+
+        <div id="mobile-menu" class="hidden md:hidden fixed top-24 left-1/2 -translate-x-1/2 
+         w-[90%] bg-white/95  backdrop-blur-sm 
+         z-40 shadow-lg border border-border rounded-2xl overflow-hidden">
+
+            <div class="flex flex-col p-4 space-y-2">
+                <a href="#services" class="text-base text-foreground hover:bg-muted p-2 rounded-md transition">
+                    Serviços
+                </a>
+                <a href="#about" class="text-base text-foreground hover:bg-muted p-2 rounded-md transition">
+                    Sobre
+                </a>
+                <a href="#gallery" class="text-base text-foreground hover:bg-muted p-2 rounded-md transition">
+                    Galeria
+                </a>
+
+                <button
+                    class="w-full mt-3 px-6 py-2 bg-accent text-primary-foreground rounded-full text-base font-medium hover:opacity-90 transition">
+                    Agendar
+                </button>
+            </div>
+        </div>
+
+
+        <!-- <section class="pb-16 md:pb-24 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto text-center">
+                <div class="mb-8">
+                    <p class="text-accent font-serif text-sm tracking-widest uppercase mb-4">Arte em fios</p>
+                    <h1 class="font-serif text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                        Tranças que expressam sua essência
+                    </h1>
+                    <p class="text-lg md:text-xl text-white max-w-2xl mx-auto leading-relaxed">
+                        Transforme seu visual com tranças sofisticadas, criadas com dedicação e expertise artística.
+                        Cada trança é uma obra-prima.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+                    <button
+                        class="px-8 py-4 bg-accent text-white rounded-full font-semibold hover:opacity-90 transition">
+                        Agendar Consulta
+                    </button>
+                    <button
+                        class="px-8 py-4 border border-muted-foreground text-white rounded-full font-semibold hover:bg-muted/50 transition">
+                        Ver Galeria
+                    </button>
+                </div>
+
+                <div class="mt-24 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+                    <div>
+                        <p class="font-serif text-3xl font-bold text-accent">500+</p>
+                        <p class="text-sm text-white mt-2">Clientes Satisfeitos</p>
+                    </div>
+                    <div>
+                        <p class="font-serif text-3xl font-bold text-accent">8+</p>
+                        <p class="text-sm text-white mt-2">Anos de Experiência</p>
+                    </div>
+                    <div>
+                        <p class="font-serif text-3xl font-bold text-accent">∞</p>
+                        <p class="text-sm text-white mt-2">Estilos Únicos</p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    </div>
+
+    <main>
+
+        <section id="services" class="py-20 md:py-32 bg-background">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-12 md:mb-16">
+                    <p class="text-accent tracking-widest uppercase text-sm font-semibold mb-3">NOSSOS SERVIÇOS</p>
+
+                    <h2 class="text-4xl md:text-5xl font-serif text-foreground leading-snug">
+                        Especialidades Artísticas
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+                    <div
+                        class="p-6 bg-card rounded-xl border border-border shadow-sm transition duration-300 hover:shadow-lg">
+                        <div class="mb-4 inline-block p-2 rounded-lg bg-accent">
+
+                            <i class="fa-regular fa-star text-white w-6 h-6 flex items-center justify-center"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-2">Tranças Clássicas</h3>
+                        <p class="text-muted-foreground text-sm">
+                            Tranças tradicionais em seus diversos estilos, do simples à complexa.
+                        </p>
+                    </div>
+
+                    <div
+                        class="p-6 bg-card rounded-xl border border-border shadow-sm transition duration-300 hover:shadow-lg">
+                        <div class="mb-4 inline-block p-2 rounded-lg bg-black">
+                            <i class="fa-solid fa-gem text-white w-6 h-6 flex items-center justify-center"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-2">Tranças Decoradas</h3>
+                        <p class="text-muted-foreground text-sm">
+                            Tranças com detalhes, miçangas e acessórios personalizados.
+                        </p>
+                    </div>
+
+                    <div
+                        class="p-6 bg-card rounded-xl border border-border shadow-sm transition duration-300 hover:shadow-lg">
+                        <div class="mb-4 inline-block p-2 rounded-lg bg-accent">
+                            <i class="fa-solid fa-crown text-white w-6 h-6 flex items-center justify-center"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-2">Penteados Especiais</h3>
+                        <p class="text-muted-foreground text-sm">
+                            Looks exclusivos para eventos, casamentos e ocasiões especiais.
+                        </p>
+                    </div>
+
+                    <div
+                        class="p-6 bg-card rounded-xl border border-border shadow-sm transition duration-300 hover:shadow-lg">
+                        <div class="mb-4 inline-block p-2 rounded-lg bg-black">
+                            <i class="fa-solid fa-scissors text-white w-6 h-6 flex items-center justify-center"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-2">Manutenção</h3>
+                        <p class="text-muted-foreground text-sm">
+                            Cuidados e retoque de tranças já existentes.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="about" class="py-20 md:py-32 px-4 sm:px-6 lg:px-8 
+         bg-gradient-to-b from-muted to-background 
+         ">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+                    <div class="w-full aspect-square bg-primary-cta/20 rounded-xl overflow-hidden shadow-lg">
+                        <div class="h-full w-full flex items-center justify-center text-accent-dark font-serif text-xl">
+                            <img src="src/img/aline.png" alt="Fundaodra" class="w-full h-full">
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-accent font-serif text-sm tracking-widest uppercase mb-4">Conheça a Fundadora</p>
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance">Cada
+                            trança conta uma história</h2>
+                        <p class="text-muted-foreground mb-4 leading-relaxed">Com mais de 8 anos de experiência,
+                            transformei minha paixão pelas tranças em um negócio que celebra a beleza, a cultura e a
+                            autoexpressão. Cada cliente é único, e cada trança é criada com atenção aos detalhes e
+                            carinho.</p>
+                        <p class="text-muted-foreground mb-8 leading-relaxed">Acredito que as tranças vão além de um
+                            penteado são uma forma de arte, cultura e empoderamento. Minha missão é oferecer um espaço
+                            seguro e acolhedor onde você se sinta valorizada e bella.</p>
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <div class="w-1 bg-accent rounded-full"></div>
+                                <div>
+                                    <p class="font-semibold text-foreground">Técnica Aprimorada</p>
+                                    <p class="text-sm text-muted-foreground">Constantemente atualizada com novas
+                                        técnicas e tendências</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-1 bg-accent rounded-full"></div>
+                                <div>
+                                    <p class="font-semibold text-foreground">Materiais Premium</p>
+                                    <p class="text-sm text-muted-foreground">Apenas produtos de qualidade para o bem do
+                                        seu cabelo</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-1 bg-accent rounded-full"></div>
+                                <div>
+                                    <p class="font-semibold text-foreground">Atendimento Personalizado</p>
+                                    <p class="text-sm text-muted-foreground">Cada consulta é adaptada aos seus objetivos
+                                        e desejos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="escritorio" class="py-20 md:py-32 overflow-hidden">
+            <div class="container mx-auto px-4 max-w-7xl">
+
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12 lg:mb-16">
+                    <div class="lg:max-w-3xl">
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+                            Por que escolher meu trabalho?
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-600">
+                            Eu uno técnica apurada, cuidado personalizado e paixão pela cultura para criar tranças que
+                            trazem
+                            autoestima e proteção para o seu cabelo. Trabalho de forma estratégica, valorizando a
+                            saúde dos fios e a sua satisfação.
+                        </p>
+                    </div>
+
+                </div>
+                <div id="card-trancas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-xl transition duration-300 hover:shadow-2xl flex flex-col justify-between border border-gray-100">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900 mb-3">Foco na Saúde Capilar</h2>
+                            <p class="text-gray-600">
+                                Sua saúde em primeiro lugar. Ofereço uma avaliação completa antes do serviço,
+                                garantindo que suas tranças protejam e não danifiquem os seus fios naturais.
+                            </p>
+                        </div>
+                        <button class="self-end mt-4 p-2 rounded-full text-white bg-black transition duration-150"
+                            aria-label="Mais informações sobre Saúde Capilar">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="6" cy="12" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="18" cy="12" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-xl transition duration-300 hover:shadow-2xl flex flex-col justify-between border border-gray-100">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900 mb-3">Diversidade de Estilos</h2>
+                            <p class="text-gray-600">
+                                Domino diversas técnicas: Box Braids, Twist, Nagô e Faux Locs. Juntos, escolhemos o
+                                estilo ideal que realça sua beleza e combina com seu dia a dia.
+                            </p>
+                        </div>
+                        <button class="self-end mt-4 p-2 rounded-full text-white bg-black transition duration-150"
+                            aria-label="Mais informações sobre Diversidade de Estilos">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="6" cy="12" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="18" cy="12" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-xl transition duration-300 hover:shadow-2xl flex flex-col justify-between border border-gray-100">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900 mb-3">Manutenção e Durabilidade</h2>
+                            <p class="text-gray-600">
+                                Minha técnica assegura a durabilidade da sua trança. Você ainda recebe todas as
+                                dicas essenciais de manutenção para cuidar do seu novo visual em casa.
+                            </p>
+                        </div>
+                        <button class="self-end mt-4 p-2 rounded-full text-white bg-black transition duration-150"
+                            aria-label="Mais informações sobre Manutenção e Durabilidade">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="6" cy="12" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="18" cy="12" r="1.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="gallery" class="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-background">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <p class="text-accent font-serif text-sm tracking-widest uppercase mb-4">Nosso Trabalho</p>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">Galeria de
+                        Criações</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <div
+                        class="p-6 aspect-square rounded-lg bg-card border-2 border-transparent hover:border-accent transition duration-300 shadow-md cursor-pointer flex flex-col justify-end">
+                        <img src="src/img/5.png" class="" alt="">
+                        <h3 class="font-serif font-bold text-2xl text-foreground mb-2">Box Braids</h3>
+                        <p class="text-muted-foreground text-sm">Longas, volumosas e com um toque de cor para iluminar.
+                        </p>
+                        <span class="mt-4 text-xs font-semibold text-accent uppercase tracking-wider">Estilo
+                            Clássico</span>
+                    </div>
+
+                    <div
+                        class="p-6 aspect-square rounded-lg bg-card border-2 border-transparent hover:border-accent transition duration-300 shadow-md cursor-pointer flex flex-col justify-end">
+                        <img src="src/img/6.png" class="" alt="">
+                        <h3 class="font-serif font-bold text-2xl text-foreground mb-2">Tranças Tribais</h3>
+                        <p class="text-muted-foreground text-sm">Design intricado na raiz, misturando padrões
+                            geométricos.</p>
+                        <span class="mt-4 text-xs font-semibold text-accent uppercase tracking-wider">Design
+                            Exclusivo</span>
+                    </div>
+
+                    <div
+                        class="p-6 aspect-square rounded-lg bg-card border-2 border-transparent hover:border-accent transition duration-300 shadow-md cursor-pointer flex flex-col justify-end">
+                        <img src="src/img/7.png" class="" alt="">
+                        <h3 class="font-serif font-bold text-2xl text-foreground mb-2">Decoradas com Miçangas</h3>
+                        <p class="text-muted-foreground text-sm">Personalização com acessórios em metal ou madeira.</p>
+                        <span class="mt-4 text-xs font-semibold text-accent uppercase tracking-wider">Detalhes
+                            Finos</span>
+                    </div>
+
+                    <div
+                        class="p-6 aspect-square rounded-lg bg-card border-2 border-transparent hover:border-accent transition duration-300 shadow-md cursor-pointer flex flex-col justify-end">
+                        <img src="src/img/8.png" class="" alt="">
+                        <h3 class="font-serif font-bold text-2xl text-foreground mb-2">Nagô Lateral</h3>
+                        <p class="text-muted-foreground text-sm">Perfeito para eventos, com a elegância da nagô.</p>
+                        <span class="mt-4 text-xs font-semibold text-accent uppercase tracking-wider">Ocasiões
+                            Especiais</span>
+                    </div>
+
+                    <div
+                        class="p-6 aspect-square rounded-lg bg-card border-2 border-transparent hover:border-accent transition duration-300 shadow-md cursor-pointer flex flex-col justify-end">
+                        <img src="src/img/9.png" class="" alt="">
+                        <h3 class="font-serif font-bold text-2xl text-foreground mb-2">Faux Locs</h3>
+                        <p class="text-muted-foreground text-sm">Visual de dreads com a praticidade da trança.</p>
+                        <span class="mt-4 text-xs font-semibold text-accent uppercase tracking-wider">Proteção</span>
+                    </div>
+
+                    <div
+                        class="p-6 aspect-square rounded-lg bg-card border-2 border-transparent hover:border-accent transition duration-300 shadow-md cursor-pointer flex flex-col justify-end">
+                        <img src="src/img/10.png" class="" alt="">
+                        <h3 class="font-serif font-bold text-2xl text-foreground mb-2 ">Twists Finas</h3>
+                        <p class="text-muted-foreground text-sm">Opção leve e versátil para o dia a dia.</p>
+                        <span class="mt-4 text-xs font-semibold text-accent uppercase tracking-wider">Dia a Dia</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-muted">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mb-6 text-balance">Pronta
+                    para sua transformação?</h2>
+                <p class="text-lg text-primary-foreground/80 mb-8 text-balance">Agende sua consulta e descubra o estilo
+                    de trança perfeito para você.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center"><button
+                        class="px-8 py-4 bg-accent text-accent-foreground rounded-full font-semibold hover:opacity-90 transition">Agendar
+                        Agora</button><button
+                        class="px-8 py-4 border border-primary-foreground text-primary-foreground rounded-full font-semibold hover:bg-primary-foreground/10 transition">Saiba
+                        Mais</button></div>
+                <p class="text-sm text-primary-foreground/60 mt-8"> Tire suas dúvidas pelo WhatsApp: (11) 9999-8888
+                </p>
+            </div>
+        </section>
+        <footer>
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center"><span
+                                    class="text-primary font-bold text-sm">B</span></div><span
+                                class="font-serif text-xl font-semibold">Formosa Black Tranças</span>
+                        </div>
+                        <p class="text-primary-foreground/70 text-sm leading-relaxed">Especialista em tranças e
+                            fundadora de uma marca que celebra a beleza, a arte e a autoexpressão.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-semibold mb-4">Links Rápidos</h3>
+                        <ul class="space-y-2 text-sm text-primary-foreground/70">
+                            <li><a href="#services" class="hover:text-accent transition">Serviços</a></li>
+                            <li><a href="#about" class="hover:text-accent transition">Sobre</a></li>
+                            <li><a href="#gallery" class="hover:text-accent transition">Galeria</a></li>
+                            <li><a href="#" class="hover:text-accent transition">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-semibold mb-4">Contato</h3>
+                        <div class="space-y-3 text-sm text-primary-foreground/70">
+                            <div class="flex gap-3 items-start"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-phone mt-1 flex-shrink-0">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg><span>(11) 9999-8888</span></div>
+                            <div class="flex gap-3 items-start"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-mail mt-1 flex-shrink-0">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                </svg><span>contato@belastancas.com</span></div>
+                            <div class="flex gap-3 items-start"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-map-pin mt-1 flex-shrink-0">
+                                    <path
+                                        d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                                    </path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg><span>São Paulo, SP</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-primary-foreground/20 pt-8">
+                    <div
+                        class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
+                        <p>© 2025 Formosa Black Tranças. Todos os direitos reservados.</p>
+                        <div class="flex gap-4"><a href="#" class="hover:text-accent transition">Instagram</a><a
+                                href="#" class="hover:text-accent transition">TikTok</a><a href="#"
+                                class="hover:text-accent transition">WhatsApp</a></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                const mobileLinks = mobileMenu.querySelectorAll('a, button');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
