@@ -4,29 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Estúdio especializado em tranças, box braids, nagô, boho braids e alongamentos capilares. Beleza, arte e cuidado para o seu cabelo.">
-    <meta property="og:image" content="https://simoneoliveira26.github.io/PageModal/src/img/Logo526x275.png">
-    <meta property="og:image:width" content="526" />
-    <meta property="og:image:height" content="275" />
-    <meta property="og:image:alt" content="Estúdio de Tranças e Beleza Capilar">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Estúdio Trancista | Especialista em Box Braids, Nagô e Mais">
-    <meta name="twitter:description"
-        content="Transforme seu visual com tranças autênticas e de alta qualidade. Agende seu horário!">
-
-    <meta name="keywords"
-        content="tranças, box braids, trança nagô, boho braids, kanekalon, gypsy braids, alongamento capilar, salão de beleza, cabeleireiro, cabelo afro, trancista">
-
-    <meta property="og:title" content="Trancista Arte & Estilo | Tranças, Box Braids e Cuidado Capilar">
-    <meta property="og:description"
-        content="Encontre os melhores estilos de tranças: Box Braids, Nagô, Kanekalon e muito mais. Arte, cuidado e auto estima em um só lugar.">
-
-    <meta property="og:type" content="website">
-    <link rel="shortcut icon" href="src/favicon/favicon.ico" type="image/x-icon">
-
-    <title>Estúdio Trancista | Tranças Box Braids, Nagô e Estilos Capilares</title>
+    <title>Formosa Black Tranças- Arte em Fios</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/heroicons@2.1.3/dist/heroicons.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -132,58 +110,317 @@
             border-radius: 10px;
             margin-bottom: 10px;
         }
+        html, body {
+  touch-action: manipulation;
+}
+button {
+  pointer-events: auto;
+}
+
+
+.header {
+    padding-top: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    transform: translateY(0);
+    transition: transform .35s;
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header__in {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem .5rem .5rem 1rem;
+    border-radius: 1.2rem;
+    background: #f7f5ff;
+    border: 1px solid #f7f5ff;
+    position: relative;
+    align-items: center;
+}
+
+
+.logo img {
+    height: 40px;
+}
+
+
+.header__navigation {
+    flex: 1;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    position: relative;
+    border-radius: 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.menu li a::after {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 6px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill='none'%3E%3Cpath d='M9.48999 13L12.49 16L15.49 13' stroke='%23051F24' stroke-width='1.3' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+    background-size: contain;
+    transition: transform 0.3s ease;
+}
+
+.menu li:hover a {
+    background: #f1edee;
+}
+
+.menu li:hover a::after {
+    transform: rotate(180deg);
+}
+
+.header-right,
+.header-left {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: clamp(0.5rem, 1rem, 1rem);
+}
+
+.header-right a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #333;
+}
+
+.btn-see-more {
+    background: #000;
+    color: #fff !important;
+    padding: 8px 16px;
+    border-radius: 6px 6px 6px 0;
+    transition: 0.3s;
+}
+
+.ia-btn:hover {
+    background: #444;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+}
+
+/* Botão hamburguer */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.hamburger span {
+    display: block;
+    width: 70%;
+    height: 1px;
+    background: #000;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
+}
+
+.menu-body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.mobile-menu {
+    position: relative;
+    height: 300px;
+    background: #f7f5ff;
+    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    padding: 20px;
+    z-index: 999;
+    border-radius: 10px;
+    display: none;
+    margin: 10px 30px 0 30px;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu li {
+    margin: 20px 0;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu.active a {
+    position: relative;
+    display: block;
+    border-bottom: 1px solid #eeebf2;
+    padding-bottom: 10px;
+
+}
+
+.mobile-menu.active a::after {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    content: "";
+    margin-top: -1.2rem;
+    transform: rotate(-90deg);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25' fill='none'%3E%3Cpath d='M9.48999 13L12.49 16L15.49 13' stroke='%23051F24' stroke-width='1.3' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+    background-size: contain;
+    transition: transform 0.3s ease;
+    margin-top: -1.6rem;
+}
+@media (max-width: 928px) {
+    .menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .founder-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .founder-image {
+        margin-top: 2rem;
+        max-width: 400px;
+    }
+
+    .founder-text {
+        max-width: 100%;
+    }
+
+    .founder-header a {
+        font-size: 14px;
+    }
+
+    .founder-section {
+        flex-direction: column-reverse;
+    }
+}
     </style>
 </head>
 
 <body class="min-h-screen bg-white text-foreground ">
 
     <div class="capa relative pt-32 pb-16 md:pt-48 md:pb-24">
-        <header class="fixed top-0 w-full bg-white/80 backdrop-blur-lg backdrop-blur-sm border-b border-border z-50">
-            <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                        <span class="text-foreground font-bold text-sm">F</span>
-                    </div>
-                    <span class="font-serif text-xl font-semibold text-foreground hidden sm:inline">
-                        Formosa Black Tranças
-                    </span>
+        <header class="header">
+        <div class="inner">
+            <div class="header__in ">
+
+                <div class="header-left ">
+                    <nav class="header__navigation">
+                        <ul id="menu-main-menu" class="menu">
+                            <li id="menu-item-372" class="products-menu menu-item ">
+                                <a href="#areas-de-atuacao">Áreas</a>
+                            </li>
+                            <li id="menu-item-373" class="solutions-menu menu-item ">
+                                <a href="#escritorio">Escritório</a>
+                            </li>
+                            <li id="menu-item-374" class="resources-menu menu-item ">
+                                <a href="#equipe">Equipe</a>
+                            </li>
+                            <li id="menu-item-375" class="for-partners-menu menu-item ">
+                                <a href="#contato">Contato</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
+                <div class="header-right flex items-center">
 
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#services"
-                        class="text-sm text-muted-foreground hover:text-foreground transition">Serviços</a>
-                    <a href="#about" class="text-sm text-muted-foreground hover:text-foreground transition">Sobre</a>
-                    <a href="#gallery"
-                        class="text-sm text-muted-foreground hover:text-foreground transition">Galeria</a>
+                    <a class="btn-see-more" href="https://wa.me/5518991477642" target="_self">Consulta</a>
+                    <button id="mobile-toggle" class="hamburger" aria-label="Menu mobile">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
 
-                    <a href="https://wa.me/18998076974
-?text=Ol%C3%A1%21%20Quero%20agendar%20agora%20minha%20tran%C3%A7a." target="_blank"
-                        class="px-8 py-2 bg-accent text-accent-foreground rounded-full font-semibold hover:opacity-90 transition">
-                        Agendar
-                    </a>
                 </div>
-
-                <button id="mobile-menu-button" class="md:hidden">
-                    <!-- ÍCONE HAMBÚRGUER -->
-                    <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-menu text-foreground">
-                        <line x1="4" x2="20" y1="12" y2="12"></line>
-                        <line x1="4" x2="20" y1="6" y2="6"></line>
-                        <line x1="4" x2="20" y1="18" y2="18"></line>
-                    </svg>
-
-                    <!-- ÍCONE X (FECHAR) -->
-                    <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-x text-foreground hidden">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-
-            </nav>
-        </header>
+            </div>
+        </div>
+        <div class="menu-body">
+            <div class="menu-container">
+                <nav id="mobile-menu" class="mobile-menu">
+                    <ul>
+                        <li><a href="#areas-de-atuacao">Áreas</a></li>
+                        <li><a href="#escritorio">Escritório</a></li>
+                        <li><a href="#equipe">Equipe</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
         <div id="mobile-menu" class="hidden md:hidden fixed top-24 left-1/2 -translate-x-1/2 
          w-[90%] bg-white/95  backdrop-blur-sm 
@@ -200,11 +437,10 @@
                     Galeria
                 </a>
 
-                <a href="https://wa.me/18998076974
-?text=Ol%C3%A1%21%20Quero%20agendar%20agora%20minha%20tran%C3%A7a." target="_blank"
-                    class="w-full mt-3 px-6 py-2 bg-accent text-primary-foreground rounded-full  font-medium hover:opacity-90 transition text-center">
+                <button
+                    class="w-full mt-3 px-6 py-2 bg-accent text-primary-foreground rounded-full text-base font-medium hover:opacity-90 transition">
                     Agendar
-                </a>
+                </button>
             </div>
         </div>
 
@@ -326,29 +562,13 @@
 
             </div>
         </section>
-        <a href="https://wa.me/18998076974?text=Olá!%20Vim%20da%20sua%20página%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços."
-            target="_blank" class="whatsapp-float" style="
-        position: fixed;
-        width: 55px;
-        height: 55px;
-        bottom: 15px;
-        right: 15px;
-        background-color: #022d17;
-        color: #FFF;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 30px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.2s ease;
-   " title="Fale Conosco por WhatsApp" onmouseover="this.style.transform='scale(1.12)'"
-            onmouseout="this.style.transform='scale(1)'">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+        <a href="https://wa.me/551831753739" target="_blank" class="whatsapp-float"
+            style="position: fixed; width: 50px; height: 50px; bottom: 10px; right: 10px; background-color: #022d17; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 1000; display: flex; align-items: center; justify-content: center;"
+            title="Fale Conosco por WhatsApp">
 
+            <i class="fab fa-whatsapp"></i>
+
+        </a>
         <section id="about" class="py-20 md:py-32 px-4 sm:px-6 lg:px-8 
          bg-gradient-to-b from-muted to-background 
          ">
@@ -567,106 +787,6 @@
                 </div>
             </div>
         </section>
-        <section id="faq" class="relative z-10 py-10 py-24">
-            <div class="container mx-auto max-w-4xl px-4">
-                <div class="mb-12 text-center">
-                    <h2 class="text-3xl font-bold sm:text-4xl text-black">Perguntas Frequentes</h2>
-                    <p class="mt-4 text-black">Tudo que você precisa saber sobre tranças, manutenção e cuidados</p>
-                </div>
-
-                <div class="space-y-4">
-
-                    <div class="border border-black/10 rounded-xl">
-                        <button
-                            class="w-full flex justify-between items-center p-4 text-left text-black font-medium focus:outline-none faq-toggle">
-                            Quanto tempo dura uma trança?
-                            <svg class="h-5 w-5 transition-transform duration-300 transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7">
-                                </path>
-                            </svg>
-                        </button>
-                        <div
-                            class="faq-content text-black overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-                            <div class="px-4 pb-4">
-                                A durabilidade varia de 30 a 90 dias, dependendo do cuidado e do tipo de trança. Sempre
-                                recomendo retornar para manutenção entre 30 e 45 dias para manter o visual bonito e
-                                saudável.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border border-black/10 rounded-xl">
-                        <button
-                            class="w-full flex justify-between items-center p-4 text-left text-black font-medium focus:outline-none faq-toggle">
-                            As tranças doem ao serem feitas?
-                            <svg class="h-5 w-5 transition-transform duration-300 transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7">
-                                </path>
-                            </svg>
-                        </button>
-                        <div
-                            class="faq-content text-black overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-                            <div class="px-4 pb-4">
-                                Faço o trabalho com técnica e cuidado para evitar dor e tensão excessiva. Pode haver uma
-                                leve
-                                sensibilidade nas primeiras horas, mas nunca deve causar dor forte. Seu conforto é
-                                prioridade!
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border border-black/10 rounded-xl">
-                        <button
-                            class="w-full flex justify-between items-center p-4 text-left text-black font-medium focus:outline-none faq-toggle">
-                            Como cuidar das tranças no dia a dia?
-                            <svg class="h-5 w-5 transition-transform duration-300 transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7">
-                                </path>
-                            </svg>
-                        </button>
-                        <div
-                            class="faq-content text-black overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-                            <div class="px-4 pb-4">
-                                Use tônico no couro cabeludo 2-3x por semana, durma com touca de cetim e mantenha as
-                                tranças
-                                hidratadas com spray próprio. Esses cuidados ajudam a evitar frizz, coceira e prolongam
-                                a
-                                durabilidade.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border border-black/10 rounded-xl">
-                        <button
-                            class="w-full flex justify-between items-center p-4 text-left text-black font-medium focus:outline-none faq-toggle">
-                            Posso lavar as tranças normalmente?
-                            <svg class="h-5 w-5 transition-transform duration-300 transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7">
-                                </path>
-                            </svg>
-                        </button>
-                        <div
-                            class="faq-content text-black overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-                            <div class="px-4 pb-4">
-                                Sim! Recomendo lavar a cada 7-10 dias, focando no couro cabeludo. Deixe secar
-                                completamente
-                                para evitar odor e mofo. Posso orientar você com o passo a passo após a aplicação.
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </section>
 
         <section class="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-muted">
             <div class="max-w-3xl mx-auto text-center">
@@ -688,7 +808,8 @@
                     </a>
 
                     <!-- BOTÃO SAIBA MAIS -->
-                    <a href="https://www.instagram.com/formosablacktrancas?igsh=MWkzZzdhd3ZuNXpnMg==" target="_blank"
+                    <a href="https://wa.me/18998076974
+?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20seus%20estilos%20de%20tran%C3%A7a." target="_blank"
                         class="px-8 py-4 border border-primary-foreground text-primary-foreground rounded-full font-semibold hover:bg-primary-foreground/10 transition">
                         Saiba Mais
                     </a>
@@ -739,15 +860,33 @@
                     <div
                         class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
                         <p>© 2025 Formosa Black Tranças. Todos os direitos reservados.</p>
-                        <div class="flex gap-4"><a
-                                href="https://www.instagram.com/formosablacktrancas?igsh=MWkzZzdhd3ZuNXpnMg=="
-                                class="hover:text-accent transition" target="_blank">Instagram</a></div>
+                        <div class="flex gap-4"><a href="#" class="hover:text-accent transition">Instagram</a></div>
                     </div>
                 </div>
             </div>
         </footer>
     </main>
-    <script src="src/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                const mobileLinks = mobileMenu.querySelectorAll('a, button');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 
 </body>
 
